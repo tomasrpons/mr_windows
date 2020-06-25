@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %} New Recomendation {% endblock %}
+
+{% block content %}
+
+<html>
+
+<head>OUR RECOMENDATIONS</head>
+
+<p>
+
+    {% for recommendation in recommendations %}
+
+        <li>{{recommendation}}</li>
+
+    {% endfor %}
+
+</p>
+
+<form method="post" method="GET" action="/movies/">{% csrf_token %}
+
+    <input type="submit" value="Try another">
+
+</form>
+
+<form method="post" method="GET" action="/index/">{% csrf_token %}
+
+    <input type="submit" value="Go back">
+
+</form>
+
+
+</html>
+
+{% endblock %}
